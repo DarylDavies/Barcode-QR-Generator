@@ -19,6 +19,20 @@ Azure App Service is an HTTP-based service for hosting web applications, REST AP
 
 ``` PM> Install-Package QRCoder -Version 1.4.3 ```
 ## Screenshots
-Barcode
+**Barcode Generator & Reader**
+
 ![image](https://user-images.githubusercontent.com/92319855/151719237-0e29d76a-d4d4-49a2-af37-87e97a158e04.png)
-QR code
+
+**QR code Generator**
+
+![image](https://user-images.githubusercontent.com/92319855/151719449-46ec835d-1186-4dde-a62b-cba3887e40c1.png)
+
+**QR code Reader**
+
+![image](https://user-images.githubusercontent.com/92319855/151719492-82155fdd-7be5-4c41-ade5-8e99d5fe88e0.png)
+
+**QR code Scanner**
+
+
+
+
