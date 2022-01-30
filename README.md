@@ -65,6 +65,7 @@ https://user-images.githubusercontent.com/92319855/151720347-0d6d582a-8e07-45b3-
  ```
 **Main code for QR code**
 ```
+           {
             var writer = new QRCodeWriter();
             var resultBit = writer.encode(formCollection["QRCodeString"], BarcodeFormat.QR_CODE, 200, 200);
             var matrix = resultBit;
@@ -84,7 +85,7 @@ https://user-images.githubusercontent.com/92319855/151720347-0d6d582a-8e07-45b3-
             result.Save(webRootPath + "\\Image\\QrcodeNew.png");
             ViewBag.URL = "\\Image\\QrcodeNew.png";
             return View();
-        }
+            }
 ```
 
 
