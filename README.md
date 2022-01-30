@@ -33,6 +33,58 @@ Azure App Service is an HTTP-based service for hosting web applications, REST AP
 
 **QR code Scanner**
 
+https://user-images.githubusercontent.com/92319855/151720347-0d6d582a-8e07-45b3-94dc-65d53b83e58b.mp4
 
+## Code Snippet
+**Main code for Barcode**
+```//The Image is drawn based on length of Barcode text.
+                using (Bitmap bitMap = new Bitmap(barcode.Length * 30, 80))
+                {
+                    //The Graphics library object is generated for the Image.
+                    using (Graphics graphics = Graphics.FromImage(bitMap))
+                    {
+                        //The installed Barcode font.
+                        Font oFont = new Font("IDAutomationHC39M Free Version", 16);
+                        PointF point = new PointF(2f, 2f);
+
+                        //White Brush is used to fill the Image with white color.
+                        SolidBrush whiteBrush = new SolidBrush(Color.White);
+                        graphics.FillRectangle(whiteBrush, 0, 0, bitMap.Width, bitMap.Height);
+
+                        //Black Brush is used to draw the Barcode over the Image.
+                        SolidBrush blackBrush = new SolidBrush(Color.Black);
+                        graphics.DrawString("*" + barcode + "*", oFont, blackBrush, point);
+                    }
+
+                    //The Bitmap is saved to Memory Stream.
+                    bitMap.Save(ms, ImageFormat.Png);
+
+                    //The Image is finally converted to Base64 string.
+                    ViewBag.BarcodeImage = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+                } 
+ ```
+**Main code for QR code**
+```
+            var writer = new QRCodeWriter();
+            var resultBit = writer.encode(formCollection["QRCodeString"], BarcodeFormat.QR_CODE, 200, 200);
+            var matrix = resultBit;
+            int scale = 2;
+            Bitmap result = new Bitmap(matrix.Width * scale, matrix.Height * scale);
+            for (int x = 0; x < matrix.Height; x++)
+            {
+                for(int y = 0; y < matrix.Width; y++)
+                {
+                    Color pixel = matrix[x, y] ? Color.Black : Color.White;
+                    for (int i = 0; i < scale; i++)
+                        for (int j = 0; j < scale; j++)
+                            result.SetPixel(x * scale + i, y * scale + j, pixel);
+                }
+            }
+            string webRootPath = _hostEnvironment.WebRootPath;
+            result.Save(webRootPath + "\\Image\\QrcodeNew.png");
+            ViewBag.URL = "\\Image\\QrcodeNew.png";
+            return View();
+        }
+```
 
 
