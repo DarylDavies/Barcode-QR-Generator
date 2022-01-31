@@ -9,7 +9,8 @@ Both QR codes and barcodes store information about an item or product in a machi
 ## Hosting
 [Azure Web App Services](https://azure.microsoft.com/en-in/services/app-service/web/)
 
-Azure App Service is an HTTP-based service for hosting web applications, REST APIs, and mobile back ends. You can develop in your favorite language, be it .NET, .NET Core, Java, Ruby, Node.js, PHP, or Python. Applications run and scale with ease on both Windows and Linux-based environments.Azure App Service is a fully managed platform as a service (PaaS) offering for developers.
+Azure Web Apps is a cloud computing based platform for hosting websites, created and operated by Microsoft. 
+It is an HTTP-based service for hosting web applications, REST APIs, and mobile back ends. You can develop in your favorite language, be it .NET, .NET Core, Java, Ruby, Node.js, PHP, or Python. Applications run and scale with ease on both Windows and Linux-based environments. Azure App Service is a fully managed platform as a service (PaaS) offering for developers.
 ## Install
 [IDAutomationHC39M Free Version Font](https://www.wfonts.com/font/idautomationhc39m-free-version)
 
